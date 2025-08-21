@@ -7,15 +7,13 @@ namespace BlogGallo.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private List<Categoria> categorias;
+    private List<Postagem> postagens;
 
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
-    }
-
-    public IActionResult Index()
-    {
-        Categoria dança = new Categoria();
+         Categoria dança = new Categoria();
         dança.Id = 1;
         dança.Nome = "Dança";
 
@@ -28,7 +26,7 @@ public class HomeController : Controller
         Categoria jazz  = new(3, "Dança");
 
         
-        List<Postagem> postagens = [
+        postagens = [
                 new() {
                     Id = 1,
                     Nome = "Dança: Movimento, Expressão e Cultura",
@@ -59,19 +57,27 @@ public class HomeController : Controller
                     CategoriaId = 3,
                     Categoria = jazz,
                     DataPostagem = DateTime.Parse("13/08/2025"),
-                    Descricao = "djldksjiflskd",
+                    Descricao = ".",
                     Texto = "A dança jazz é um estilo cheio de energia, expressão e movimento! Com raízes nos Estados Unidos, ela surgiu no início do século XX, influenciada pelos ritmos africanos e pela música jazz, que dava o tom animado das performances. Com o tempo, o jazz foi se transformando e incorporando elementos de outros estilos, como o ballet clássico, o hip hop e a dança contemporânea. O resultado? Uma dança versátil, vibrante e super cênica, que você encontra desde palcos da Broadway até academias e videoclipes. O jazz se destaca pelos movimentos rápidos, saltos, giros e muita presença de palco. Mais do que técnica, ele valoriza a musicalidade, a expressividade e a conexão com o público. É uma dança que convida o corpo inteiro a se movimentar com intensidade — e o coração também!",
                     Thumbnail = "/img/jazz.jpg",
                     Foto = "/img/jazz.jpg"
                 },
 
         ];
-        
+    }
+
+    public IActionResult Index()
+    { 
         return View(postagens);
     }
     
     public IActionResult Postagem(int id)
     {
+        var postagem = postagens 
+            .Where(p => p.Id == id)
+            .SingleOrDefault();
+        if (postagem == null)
+            return NotFound();
         return View();
     }
     public IActionResult Privacy()

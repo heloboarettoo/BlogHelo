@@ -6,5 +6,5 @@ Criando um projeto MVC
 dotnet new mvc -o BlogHelo
 
 xercutar
-cd BlogHelo
+cd BlogGallo
 dotnet watch run
