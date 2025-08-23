@@ -4,7 +4,7 @@
 }
 
 <div class="p-5 mb-4 bg-secondary rounded-3 text-center text-white">
-    <h1 class="display-3 fw-bold">blog da Helo</h1>
+    <h1 class="display-3 fw-bold">Blog da Helo</h1>
     <p class="fs-3">confira algumas danças</p>
 </div>
 
@@ -16,7 +16,8 @@
                 <div class="Card h-100">
                     <div class="row h-100 g-0">
                         <div class="col-md-4">
-                            <img src="@postagem.Thumbnail" class="img-fluid rounded-start h-100 object-fit-cover" alt="@postagem.Nome">
+                            <img src="@postagem.Thumbnail" 
+                                class="img-fluid rounded-start h-100 object-fit-cover" alt="@postagem.Nome">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -26,7 +27,8 @@
                                 <h5 class="card-title">"@postagem.Nome</h5>
                                 <p class="card-text">"@postagem.Descricao</p>
                                 <p class="card-text d-sm-inline-flex justify-content-between">
-                                    <small class="text-body-secondary">postado em: "@postagem.DataPostagem.ToString("dd/MM/yyyy hh:mm")
+                                    <small class="text-body-secondary">
+                                        postado em: "@postagem.DataPostagem.ToString("dd/MM/yyyy hh:mm")
                                 </small>
                                 <a asp-action="Postagem" asp-route-id="@postagem.Id">Ler Mais</a>
                                 </p>

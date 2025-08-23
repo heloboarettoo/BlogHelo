@@ -1,7 +1,6 @@
 @model Postagem
 @{
     ViewData["Title"] = "Postagem";
-}
 
 <div class="container">
     <div class="row my-5">
@@ -21,6 +20,33 @@
         </div>
         @* Sidebar *@
         <div class="col-md-4">
+            @* formulário e Pesquisa *@
+            <div class="card mb-4">
+                <div class="card-header">Pesquisar</div>
+                <div class="card-body">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Pesquisar por...">
+                            <button class="btn btn-outline-secondary" type="button">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">Categorias</div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#" class="text-decaration-none mb-2">
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
     </div>

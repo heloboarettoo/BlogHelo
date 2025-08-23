@@ -17,7 +17,10 @@ namespace BlogGallo.Models;
         public DateTime DataPostagem { get; set; }
 
         public string Descricao  { get; set; }
+
          public string Foto  { get; set; }
+
         public string Thumbnail  { get; set; }
+        
         public string Texto { get; set; }
     }
