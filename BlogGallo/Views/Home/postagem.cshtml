@@ -1,6 +1,7 @@
 @model Postagem
 @{
     ViewData["Title"] = "Postagem";
+    var categorias = (List<Categoria>)ViewData["Categorias"];
 }
 
 <div class="container">
@@ -40,11 +41,14 @@
                 <div class="card-header">Categorias</div>
                 <div class="card-body">
                     <ul class="list-unstyled">
-                        <li>
-                            <a href="#" class="text-decaration-none mb-2">
-
-                            </a>
-                        </li>
+                         @foreach (Categoria categoria in categorias)
+                        {
+                            <li>
+                                <a href="#" class="text-decoration-none mb-2">
+                                    @categoria.Nome
+                                </a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
